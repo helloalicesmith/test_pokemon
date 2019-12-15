@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 import {
   Paper,
   Table,
@@ -19,8 +19,8 @@ import { useStore } from '../../store'
 const PokemonTable = observer(() => {
   const { fetch, filterPokemons, count, getFilterTags, tags, isLoad } = useStore()
 
-  const [page, setPage] = React.useState(0)
-  const [rowsPerPage, setRowsPerPage] = React.useState(10)
+  const [page, setPage] = useState(0)
+  const [rowsPerPage, setRowsPerPage] = useState(10)
 
   const classes = useStyles()
 
@@ -49,7 +49,9 @@ const PokemonTable = observer(() => {
             <TableRow>
               {columns.map((column, index) => (
                 <TableCell key={index}>
-                  <Typography variant="h6">{column.label}</Typography>
+                  <Typography variant="h6" className={classes.headFont}>
+                    {column.label}
+                  </Typography>
                 </TableCell>
               ))}
             </TableRow>

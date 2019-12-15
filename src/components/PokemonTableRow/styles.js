@@ -2,17 +2,17 @@ import { makeStyles } from '@material-ui/core'
 import * as colors from '@material-ui/core/colors'
 import { typeColor } from '../../constants'
 
-const myColors = {
+const myColors = theme => ({
   ...colors,
   white: '#fff',
   gray: colors.grey,
-  black: colors.grey
-}
+  black: theme.palette.common.black
+})
 
-export const useStyles = makeStyles({
+export const useStyles = makeStyles(theme => ({
   row: {
     height: '75px',
-    backgroundColor: ({ color }) => (color ? myColors[color][50] : null)
+    backgroundColor: ({ color }) => (color ? myColors(theme)[color][50] : null)
   },
   type: {
     padding: '10px',
@@ -28,4 +28,4 @@ export const useStyles = makeStyles({
     width: 100,
     height: 100
   }
-})
+}))

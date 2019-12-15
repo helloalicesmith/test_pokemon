@@ -26,4 +26,4 @@ export const getFilterType = (tags, pokemons) =>
   })
 
 export const getNewPokemons = (pokemons, colors, search, searchValue) =>
-  serialize(pokemons, colors).filter(pokemon => pokemon[search].includes(searchValue))
+  serialize(pokemons, colors).filter(pokemon => pokemon.name.includes(searchValue))

@@ -11,7 +11,6 @@ class PokemonStore {
   @observable.ref colors = []
   @observable.ref count = 0
   @observable.ref searchValue = ''
-  @observable.ref search = 'name'
   @observable.ref tags = []
   @observable.ref filterTags = []
   @observable.ref isLoad = false
@@ -40,11 +39,6 @@ class PokemonStore {
   @action.bound
   setSearchValue(value) {
     this.searchValue = value
-  }
-
-  @action.bound
-  setSearch(search) {
-    this.search = search
   }
 
   @action.bound

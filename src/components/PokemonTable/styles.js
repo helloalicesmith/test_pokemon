@@ -9,7 +9,8 @@ export const useStyles = makeStyles({
   },
 
   table: {
-    minWidth: 750
+    minWidth: 750,
+    position: 'relative'
   },
 
   pagination: {
@@ -25,7 +26,9 @@ export const useStyles = makeStyles({
     left: '50%'
   },
   emptyRow: {
-    height: 75 * 10,
-    position: 'relative'
+    height: 75 * 10
+  },
+  headFont: {
+    fontFamily: 'Josefin Sans, sans-serif'
   }
 })
