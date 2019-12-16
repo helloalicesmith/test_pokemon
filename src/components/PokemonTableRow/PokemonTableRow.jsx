@@ -1,11 +1,16 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import { TableCell, TableRow, Avatar, Tooltip } from '@material-ui/core'
 import { useStyles } from './styles'
 import Span from './Span'
+import { PokeListService } from '../../services/PokeListService'
 
 const PokemonTableRow = ({ pokemon }) => {
   const classes = useStyles({
     color: pokemon.color
+  })
+
+  useEffect(() => {
+    PokeListService.getBackAvatar(pokemon.avatar_back)
   })
 
   return (

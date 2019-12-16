@@ -10,4 +10,9 @@ export const PokeListService = class {
     const { data } = await axios.get(`/pokemon-species/${id}`)
     return data
   }
+
+  static getBackAvatar = async url => {
+    const { data } = await axios.get(url)
+    return data
+  }
 }
